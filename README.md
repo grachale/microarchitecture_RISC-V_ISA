@@ -38,12 +38,12 @@ sub | 0100000 rs2 rs1 000 rd 0110011 | R-type
 slt | 0000000 rs2 rs1 010 rd 0110011 | R-type
 div | 0000001 rs2 rs1 100 rd 0110011 | R-type
 rem | 0000001 rs2 rs1 110 rd 0110011 | R-type
-beq | imm[12|10:5] rs2 rs1 000 imm[4:1|11] 1100011 | SB-type
-blt | imm[12|10:5] rs2 rs1 100 imm[4:1|11] 1100011 | SB-type
+beq | imm[12 or 10:5] rs2 rs1 000 imm[4:1 or 11] 1100011 | SB-type
+blt | imm[12 or 10:5] rs2 rs1 100 imm[4:1 or 11] 1100011 | SB-type
 lw | imm[11:0] rs1 010 rd 0000011 | I-type
 sw | imm[11:5] rs2 rs1 010 imm[4:0] 0100011 | S-type
 lui | imm[31:12] rd 0110111 | U-type
-jal | imm[20|10:1|11|19:12] rd 1101111 | UJ-type
+jal | imm[20 or 10:1 or 11 or 19:12] rd 1101111 | UJ-type
 jalr | imm[11:0] rs1 000 rd 1100111 | I-type
 auipc | imm[31:12] rd 0010111 | U-type
 sll | 0000000 rs2 rs1 001 rd 0110011 | R-type
