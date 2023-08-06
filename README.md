@@ -13,17 +13,17 @@ Design a simple 32-bit processor (with Verilog) connected to a separate instruct
 | slt | slt rd, rs1, rs2 | if [rs1] < [rs2] then rd←1; else rd←0; |
 | div | div rd, rs1, rs2 | rd ← [rs1] / [rs2]; |
 | rem | rem rd, rs1, rs2 | rd ← [rs1] % [rs2]; |
-| beq | beq rs1, rs2, imm12:1 | if [rs1] == [rs2] go to [PC]+{imm12:1,'0'}; else go to [PC]+4; |
-| blt | blt rs1, rs2, imm12:1 | if [rs1] < [rs2] go to [PC]+{imm12:1,'0'}; else go to [PC]+4; |
-| lw | lw rd, imm11:0(rs1) | rd ← Memory[[rs1] + imm11:0] |
-| sw | sw rs2, imm11:0(rs1) | Memory[[rs1] + imm11:0] ← [rs2]; |
-| lui | lui rd, imm31:12 | rd ← {imm31:12,'0000 0000 0000'}; |
-| jal | jal rd, imm20:1 | rd ← [PC]+4; go to [PC] +{imm20:1,'0'}; |
-| jalr | jalr rd, rs1, imm11:0 | rd ← [PC]+4; go to [rs1]+imm11:0; |
-| auipc | auipc rd, imm31:12 | rd ← [PC] + {imm31:12,'0000 0000 0000'}; |
-| sll | sll rd, rs1, rs2 | rd ← [rs1] << [rs2]; |
-| srl | srl rd, rs1, rs2 | rd ← (unsigned)[rs1] >> [rs2]; |
-| sra | sra rd, rs1, rs2 | rd ← (signed)[rs1] >> [rs2]; |
+| beq rs1, rs2, imm12:1 | if [rs1] == [rs2] go to [PC]+{imm12:1,'0'}; else go to [PC]+4; |
+| blt rs1, rs2, imm12:1 | if [rs1] < [rs2] go to [PC]+{imm12:1,'0'}; else go to [PC]+4; |
+| lw rd, imm11:0(rs1) | rd ← Memory[[rs1] + imm11:0] |
+| sw rs2, imm11:0(rs1) | Memory[[rs1] + imm11:0] ← [rs2]; |
+| lui rd, imm31:12 | rd ← {imm31:12,'0000 0000 0000'}; |
+| jal rd, imm20:1 | rd ← [PC]+4; go to [PC] +{imm20:1,'0'}; |
+| jalr rd, rs1, imm11:0 | rd ← [PC]+4; go to [rs1]+imm11:0; |
+| auipc rd, imm31:12 | rd ← [PC] + {imm31:12,'0000 0000 0000'}; |
+| sll rd, rs1, rs2 | rd ← [rs1] << [rs2]; |
+| srl rd, rs1, rs2 | rd ← (unsigned)[rs1] >> [rs2]; |
+| sra rd, rs1, rs2 | rd ← (signed)[rs1] >> [rs2]; |
 
 ### Instruction encoding:
 
