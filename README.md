@@ -29,25 +29,25 @@ Design a simple 32-bit processor (with Verilog) connected to a separate instruct
 
 Each instruction is encoded in 32 bits (in the table from msb towards lsb), where rs1, rs2 and rd are encoded in 5 bits. Very last column of the table represents Opcode of the instruction.
 
-|---|---|---|
-| add | 0000000 rs2 rs1 000 rd 0110011 | R-type |
-| addi | imm[11:0] rs1 000 rd 0010011 | I-type |
-| and | 0000000 rs2 rs1 111 rd 0110011 | R-type |
-| sub | 0100000 rs2 rs1 000 rd 0110011 | R-type |
-| slt | 0000000 rs2 rs1 010 rd 0110011 | R-type |
-| div | 0000001 rs2 rs1 100 rd 0110011 | R-type |
-| rem | 0000001 rs2 rs1 110 rd 0110011 | R-type |
-| beq | imm[12\|10:5] rs2 rs1 000 imm[4:1\|11] 1100011 | SB-type |
-| blt | imm[12\|10:5] rs2 rs1 100 imm[4:1\|11] 1100011 | SB-type |
-| lw | imm[11:0] rs1 010 rd 0000011 | I-type |
-| sw | imm[11:5] rs2 rs1 010 imm[4:0] 0100011 | S-type |
-| lui | imm[31:12] rd 0110111 | U-type |
-| jal | imm[20\|10:1\|11\|19:12] rd 1101111 | UJ-type |
-| jalr | imm[11:0] rs1 000 rd 1100111 | I-type |
-| auipc | imm[31:12] rd 0010111 | U-type |
-| sll | 0000000 rs2 rs1 001 rd 0110011 | R-type |
-| srl | 0000000 rs2 rs1 101 rd 0110011 | R-type |
-| sra | 0100000 rs2 rs1 101 rd 0110011 | R-type |
+
+add | 0000000 rs2 rs1 000 rd 0110011 | R-type
+addi | imm[11:0] rs1 000 rd 0010011 | I-type
+and | 0000000 rs2 rs1 111 rd 0110011 | R-type
+sub | 0100000 rs2 rs1 000 rd 0110011 | R-type
+slt | 0000000 rs2 rs1 010 rd 0110011 | R-type
+div | 0000001 rs2 rs1 100 rd 0110011 | R-type
+rem | 0000001 rs2 rs1 110 rd 0110011 | R-type
+beq | imm[12|10:5] rs2 rs1 000 imm[4:1|11] 1100011 | SB-type
+blt | imm[12|10:5] rs2 rs1 100 imm[4:1|11] 1100011 | SB-type
+lw | imm[11:0] rs1 010 rd 0000011 | I-type
+sw | imm[11:5] rs2 rs1 010 imm[4:0] 0100011 | S-type
+lui | imm[31:12] rd 0110111 | U-type
+jal | imm[20|10:1|11|19:12] rd 1101111 | UJ-type
+jalr | imm[11:0] rs1 000 rd 1100111 | I-type
+auipc | imm[31:12] rd 0010111 | U-type
+sll | 0000000 rs2 rs1 001 rd 0110011 | R-type
+srl | 0000000 rs2 rs1 101 rd 0110011 | R-type
+sra | 0100000 rs2 rs1 101 rd 0110011 | R-type
 
 ### Program
 
