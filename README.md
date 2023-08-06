@@ -29,6 +29,7 @@ Design a simple 32-bit processor (with Verilog) connected to a separate instruct
 
 Each instruction is encoded in 32 bits (in the table from msb towards lsb), where rs1, rs2 and rd are encoded in 5 bits. Very last column of the table represents Opcode of the instruction.
 
+| Instruction | Bits | Opcode |
 |-------------|--------|----------|
 add | 0000000 rs2 rs1 000 rd 0110011 | R-type
 addi | imm[11:0] rs1 000 rd 0010011 | I-type
